@@ -10,7 +10,7 @@ export const getPosts = async (req, res) => {
             // .find (finding something inside a module) takes time, so it's an async action and have to add an await
         res.status(200).json(postMessages); // return array of all messages
     } catch (error) {
-        res.status(404).json({message: error.message});
+        res.status(404).json({message: error});
     }
 }
 
@@ -25,7 +25,7 @@ export const createPost = async (req, res) => {
         res.status(201).json(newPost);
     }
     catch (error) {
-        res.status(409).json({message: error.message});
+        res.status(409).json({message: error});
     }
 }
 
